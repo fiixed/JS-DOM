@@ -2,6 +2,6 @@
 
 var button = document.getElementById("myButton");
 
-button.addEventListener('click', function(){
-    
-})
+button.addEventListener("click", function () {
+  document.querySelector("#box").style.backgroundColor = "blue";
+});
