@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 /*
     Make a Todo List
     0) Make it so that after entering the task and clicking the "Add Task" button, that new task appears inside the todo-list.
@@ -5,3 +6,19 @@
     BONUS) Add a functioning "delete" button to each task (HINT: use the keyword "this" in your delete button's click listener! Console log "this" to see what value it holds)
     SUPER BONUS) Make each task editable
 */
+
+let button = document.getElementById("add-button");
+let todoList = document.getElementById("todo-list");
+let input = document.getElementById("description");
+let listItems = document.querySelectorAll("li");
+
+button.addEventListener("click", function () {
+  let newItem = input.value;
+  let newListItem = document.createElement("li");
+  newListItem.innerHTML = newItem;
+  newListItem.addEventListener("click", function () {
+    this.style.textDecoration = "line-through";
+  });
+  todoList.appendChild(newListItem);
+  input.value = "";
+});
